@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,28 +7,24 @@
 	<title>IP address and location</title>
 	<link type="text/css" rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	
-
-	<p id="ipAddress">My ip address is:- <spna id="ipAdd"></span></p>
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	var fetchAPI = "https://api.ipify.org?format=json";
 
-$.getJSON(fetchAPI, function (data) {
-	$("#ipAdd").html(data.ip);
-});
-var apiInfo = fetch("https://ipinfo.io");
-$.get(
-	apiInfo,
-	function (response) {
+	$.getJSON(fetchAPI, function (data) {
+		$("#ipAdd").html(data.ip);
+	});
+	
+	var apiInfo = fetch("https://ipinfo.io");
+	$.get(apiInfo, function (response) {
 		console.log(response.ip);
-	},
-	"json"
+	},"json"
 );
 </script>
+	
+	
+	<p id="ipAddress">My ip address is:- <spna id="ipAdd"></span></p>
 </body>
 
 </html>
