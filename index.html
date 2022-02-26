@@ -7,14 +7,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>IP address and location</title>
 	<link type="text/css" rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 	
 
 	<p id="ipAddress">My ip address is:- <spna id="ipAdd"></span></p>
-<script scr="script.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var fetchAPI = "https://api.ipify.org?format=json";
+
+$.getJSON(fetchAPI, function (data) {
+	$("#ipAdd").html(data.ip);
+});
+var apiInfo = fetch("https://ipinfo.io");
+$.get(
+	apiInfo,
+	function (response) {
+		console.log(response.ip);
+	},
+	"json"
+);
+</script>
 </body>
 
 </html>
